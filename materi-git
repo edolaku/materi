@@ -6,7 +6,8 @@ Istilah pada Git:
 - Branch
 - Merge
 - Remote
-- Clone
+- Clone -> menduplikat di dalam remote (github) ke dalam komputer lokal kita
 - Push
 - Pull
 - Readme -> menjelaskan tentang project kita, bisa singkat, bisa detail, penjelasan instalasi, atau tutorial penggunaan singkat
+- Fork/forking -> membuat 'copy/duplikat' dari repo milik orang lain (beserta history (commit)-nya)
