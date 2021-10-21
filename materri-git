@@ -1,0 +1,12 @@
+Istilah pada Git:
+- Repo
+- Commit
+- Hash -> kode/pendanda unik pada sebuah commit
+- Checkout -> saat kita berpindah ke sebuah commit
+- Branch
+- Merge
+- Remote
+- Clone
+- Push
+- Pull
+- Readme -> menjelaskan tentang project kita, bisa singkat, bisa detail, penjelasan instalasi, atau tutorial penggunaan singkat
