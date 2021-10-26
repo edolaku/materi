@@ -11,3 +11,9 @@ Istilah pada Git:
 - Pull
 - Readme -> menjelaskan tentang project kita, bisa singkat, bisa detail, penjelasan instalasi, atau tutorial penggunaan singkat
 - Fork/forking -> membuat 'copy/duplikat' dari repo milik orang lain (beserta history (commit)-nya)
+
+Untuk berpindah dari folder master di git bash gunakan command seperti contoh ini:
+cd D:/xampp/htdocs/coba
+
+Untuk menginisiasi folder tersebut gunakan command
+git init
