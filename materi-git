@@ -17,3 +17,15 @@ cd D:/xampp/htdocs/coba
 
 Untuk menginisiasi folder tersebut gunakan command
 git init
+
+command 'pwd' (print working directory) untuk menampilkan directory yang sedang aktif
+
+'git add .' untuk memasukkan semua file ke dalam staging area
+
+lalu untuk menyimpan ke commit dapat menggunakan 'git commit -m "tulis message" namafile' -m disini adalah message
+
+atau dapat langsung sekaligus ke staging area dan commit dengan menggunakan command 'git commit -am "tulis message nya"' -am disini adalah add dan message
+
+'git branch' untuk mengetahui ada branch apa saja di dalam master
+
+'git checkout "nama branch"' untuk berpindah ke branch yang ditunjuk, jadi jika ada perubahan, maka perubahan hanya akan terjadi di branch tersebut
