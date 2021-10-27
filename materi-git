@@ -29,3 +29,10 @@ atau dapat langsung sekaligus ke staging area dan commit dengan menggunakan comm
 'git branch' untuk mengetahui ada branch apa saja di dalam master
 
 'git checkout "nama branch"' untuk berpindah ke branch yang ditunjuk, jadi jika ada perubahan, maka perubahan hanya akan terjadi di branch tersebut
+
+Jenis merge:
+1. fast forward merged -> ketika branch yang akan kita gabungkan berada pada satu jalur (direct path), pada merge tipe ini tidak membuat commit baru
+fast forward merged bisa menggunakan "git merge 'nama branch'", namun head harus berada (checkout) pada master terlebih dahulu.
+lalu gunakan command "git branch --merged" untuk mengetahui apa yang sudah dimerged. dan gunakan command "git branch -d 'nama branch yang akan dihapus'" untuk menghapus branch yang telah dimerged, -d adalah delete
+2. three way merged -> ketika branch yang akan digabung tidak berada pada satu jalur.
+pada merge tipe three way, dia aka membuat commit baru, sehingga akan diminta memasukkan message, jadi ketiak kita menggabungkan dengan command "git merge 'nama branch'" maka akan dihubungkan ke code editor atau ke VIM. untuk keluar dan save message tersebut dari VIM bisa dengan ketik "esc", lalu ":wq!"
