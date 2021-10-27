@@ -12,6 +12,10 @@ Istilah pada Git:
 - Readme -> menjelaskan tentang project kita, bisa singkat, bisa detail, penjelasan instalasi, atau tutorial penggunaan singkat
 - Fork/forking -> membuat 'copy/duplikat' dari repo milik orang lain (beserta history (commit)-nya)
 
+"git config --list" -> untuk melihat configurasi git, seperti username dan email yang dimasukkan ke dalam git, lalu untuk keluar menggunakan ":q"
+untuk membuat username dan email git kita dapat menggunakan "git config --global user.name "username yg digunakan"" lalu "git config --global user.email "email yg digunakan""
+untuk global digunakan untuk seluruh folder yang akan kita gunakan, namun kita dapat menggunakan username dan email local, yang maksudnya username dan email tsb hanya digunakan pada foler(repo) yang ditunjuk dengan menggunakan perintah "git config --local user.name "username yg digunakan"" dan "git config --local user.email "email yg digunakan""
+
 Untuk berpindah dari folder master di git bash gunakan command seperti contoh ini:
 cd D:/xampp/htdocs/coba
 
@@ -35,4 +39,16 @@ Jenis merge:
 fast forward merged bisa menggunakan "git merge 'nama branch'", namun head harus berada (checkout) pada master terlebih dahulu.
 lalu gunakan command "git branch --merged" untuk mengetahui apa yang sudah dimerged. dan gunakan command "git branch -d 'nama branch yang akan dihapus'" untuk menghapus branch yang telah dimerged, -d adalah delete
 2. three way merged -> ketika branch yang akan digabung tidak berada pada satu jalur.
-pada merge tipe three way, dia aka membuat commit baru, sehingga akan diminta memasukkan message, jadi ketiak kita menggabungkan dengan command "git merge 'nama branch'" maka akan dihubungkan ke code editor atau ke VIM. untuk keluar dan save message tersebut dari VIM bisa dengan ketik "esc", lalu ":wq!"
+pada merge tipe three way, dia aka membuat commit baru, sehingga akan diminta memasukkan message, jadi ketika kita menggabungkan dengan command "git merge 'nama branch'" maka akan dihubungkan ke code editor atau ke VIM. untuk keluar dan save message tersebut dari VIM bisa dengan ketik "esc", lalu ":wq!"
+
+Pada saat akan menghapus branch yang belum dimerge, maka ada warning bahwa branch tersebut belum dimerge, sehingga dengan command "git branch -d 'nama branch yang akan dihapus'" branch tersebut tidak dapat dihapus, namun jika kita akan tetap menghapus branch tersebut, kita dapat mengganti -d tersebut dengan huruf kapital seperti command "git branch -D 'nama branch yang akan dihapus'"
+
+"git log" -> untuk menampilkan semua commit yg sudah dilakukan
+Jika kita akan kembali ke commit sebelumnya, kita depat menggunakan perintah "git checkout '7 digit commit depan yg akan dituju'" dan kita dapat kembali ke master dengan perintah "git checkout master", lalu kita dapat mengeceknya dengan graph "git log --all --decorate --oneline --graph"
+untuk membuat alias graph, dapat menggunakan perintah "alias graph="git log --all --decorate --oneline --graph""
+
+Cloning -> untuk cloning repo dari github, kita masuk ke dalam repo di github yang akan dicloning, lalu copy alamat http-nya, lalu buka git bash di komputer dan arahkan ada folder yang akan dimasukkan cloning dari github, lalu kita dapat memasukkan perintah "git clone 'alamat http yg telah dicopy'", dan repo tsb masuk ke folder yang telah ditentukan
+Pada saat kita memasukkan perintah "git remote" maka akan muncuk tulisan origin, yang mana adalah nama remote default ketika kita mengclone dari github, tapi nama tsb dapat diubah nantinya
+Dan ketika kita memasukkan perintah "git remote -v" v disini adalah verbose, maka data yang ditampilkan lebih lengkp, terdapat alamat dari remote
+Ketika kita mengedit repo dari remote yg ada di komputer kita, kita masukkan ke staging area dan commit repo local tsb, dan kita masukkan perintah "git status" maka akan terdapat keterangan bahwa branch kita berada 1 commit didepan repo github, dan ketika masukkan perintah graph, hal itu akan terlihat
+Agar commit yang telah dilakukan di komputer masuk ke dalam repo di github, kita dapat menggunakan perintah "git push". Dan ketika kita graph, maka status repo local akan sama dengan repo di github
