@@ -52,3 +52,5 @@ Pada saat kita memasukkan perintah "git remote" maka akan muncuk tulisan origin,
 Dan ketika kita memasukkan perintah "git remote -v" v disini adalah verbose, maka data yang ditampilkan lebih lengkp, terdapat alamat dari remote
 Ketika kita mengedit repo dari remote yg ada di komputer kita, kita masukkan ke staging area dan commit repo local tsb, dan kita masukkan perintah "git status" maka akan terdapat keterangan bahwa branch kita berada 1 commit didepan repo github, dan ketika masukkan perintah graph, hal itu akan terlihat
 Agar commit yang telah dilakukan di komputer masuk ke dalam repo di github, kita dapat menggunakan perintah "git push". Dan ketika kita graph, maka status repo local akan sama dengan repo di github
+
+coba tambah edit
