@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assignment</title>
+</head>
+
+<body>
+
+    <script>
+        //Destructuring assignment adalah ekspresi pada javascript yg membuat kita dapat membongkar nilai dari array atau properti dari objek ke dalam variabel yang terpisah
+
+        const coba = ["satu", "dua", "tiga"];
+
+        const [oke, eko, eek] = coba; //untuk parameter tidak bisa menggunakan angka
+        console.log(eek);
+        console.log(oke);
+        console.log(eko);
+
+        const mhs = {
+            nama: "wapek",
+            umur: 30,
+            email: "edolaku@gmail.com"
+        };
+        const {
+            nama,
+            umur,
+            email
+        } = mhs; //untuk objek, gunakan propertinya
+        console.log(nama);
+        console.log(umur);
+        console.log(email);
+    </script>
+</body>
+
+</html>
