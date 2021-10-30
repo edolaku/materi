@@ -52,3 +52,7 @@ Pada saat kita memasukkan perintah "git remote" maka akan muncuk tulisan origin,
 Dan ketika kita memasukkan perintah "git remote -v" v disini adalah verbose, maka data yang ditampilkan lebih lengkp, terdapat alamat dari remote
 Ketika kita mengedit repo dari remote yg ada di komputer kita, kita masukkan ke staging area dan commit repo local tsb, dan kita masukkan perintah "git status" maka akan terdapat keterangan bahwa branch kita berada 1 commit didepan repo github, dan ketika masukkan perintah graph, hal itu akan terlihat
 Agar commit yang telah dilakukan di komputer masuk ke dalam repo di github, kita dapat menggunakan perintah "git push". Dan ketika kita graph, maka status repo local akan sama dengan repo di github
+
+Untuk menambahkan repo local ke github, kita harus membuat repo dulu di github, beri nama yang sama, namun kosongkan isi dari repo github tsb, termasuk tidak memberi README didalamnya, lalu akan diarahkan petunjuk dari github jika di github belum ada, dan di local belum ada. atau di local sudah dibuat, namun di github belum.
+Jika kita sudah membuat pada local, maka masukkan perintah "git remote add origin 'alamat http dari github'". Artinya kita akan membuat remote baru yang namanya origin (default) dengan alamat yang dimasukkan. nama dari remote dapat diubah.
+Lalu untuk memasukkan file yang sudah kita buat di local ke github, tulis perintah "git push -u origin master" u adalah utk menset upstream, agar kedepannya kita hanya masukkan perintah "git push" saja, otomatis dikirim ke remote origin yang branchnya master
