@@ -24,7 +24,7 @@ git init
 
 command 'pwd' (print working directory) untuk menampilkan directory yang sedang aktif
 
-'git add .' untuk memasukkan semua file ke dalam staging area
+'git add .' untuk memasukkan semua file ke dalam staging area. Namun untuk memasukkan salah satu file saja ke dalam staging area, kita dapat menggunakan perintah "git add 'nama file'"
 
 lalu untuk menyimpan ke commit dapat menggunakan 'git commit -m "tulis message" namafile' -m disini adalah message
 
