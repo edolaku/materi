@@ -17,11 +17,11 @@
         //Destructuring assignment adalah ekspresi pada javascript yg membuat kita dapat membongkar nilai dari array atau properti dari objek ke dalam variabel yang terpisah
 
         const coba = ["satu", "dua", "tiga"];
-
         const [oke, eko, eek] = coba; //untuk parameter tidak bisa menggunakan angka
-        console.log(eek);
-        console.log(oke);
-        console.log(eko);
+        console.log(eek); //hasil "tiga"
+        console.log(oke); //hasil "satu"
+        console.log(eko); //hasil "dua"
+
 
         const mhs = {
             nama: "wapek",
@@ -33,9 +33,31 @@
             umur,
             email
         } = mhs; //untuk objek, gunakan propertinya
-        console.log(nama);
-        console.log(umur);
-        console.log(email);
+        console.log(nama); //hasil "wapek"
+        console.log(umur); //hasil 30
+        console.log(email); //hasil "edolaku@gmail.com"
+
+
+        const pgw = ["edo", "joko", "nurul", "wahyu"];
+        const [satu, , , empat] = pgw
+        ; //ini agar joko dan nurul tidak di definisikan/diskip itemnya, sehingga joko dan nurul tidak dapat dipanggil sebagai variabel
+        console.log(satu); //hasilnya "edo"
+
+
+        //Destructuring assignment juga dapat digunakan untuk swap items. contoh:
+        let i = 1;
+        let y = 2;
+        [i, y] = [y, i];
+        console.log(y); //hasil 1
+        console.log(i); //hasil 2
+
+
+        //Destructuring assignment juga dapat untuk return value pada function. jadi function nya dapat mengembalikan array, dan array nya langsung ditangkap oleh sintax Destructuring ini. contoh:
+        function rtrn() {
+            return ["fungsi return pertama", "fungsi return kedua"];
+        }
+        const [pertama, kedua] = rtrn(); //ini meng-unpack array pada return menjadi variabel
+        console.log(pertama); //hasil "fungsi return pertama"
     </script>
 </body>
 
