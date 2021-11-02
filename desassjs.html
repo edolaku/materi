@@ -23,23 +23,37 @@
         console.log(eko); //hasil "dua"
 
 
-        const mhs = {
-            nama: "wapek",
-            umur: 30,
-            email: "edolaku@gmail.com"
-        };
-        const {
+        //Destructuring assignment untuk object
+        // const mhs = {
+        //     nama: "wapek",
+        //     umur: 30,
+        //     email: "edolaku@gmail.com"
+        // };
+        // const {
+        //     nama,
+        //     umur,
+        //     email
+        // } = mhs 
+        // ; //untuk objek, gunakan propertinya, tidak bisa menggunakan nama sembarang, untuk variabel juga dapat di assign ke variabel yang baru, yaitu dengan cara:
+        // const{nama = n, umur = u. email = "edoooq@gmail.com"} = mhs; //jadi dengan cara ini, variabel dari nama berubah menjadi n, dan variabel umur berubah menjadi u, dan untuk variabel email mendapat nilai default yaitu edoooq@gmail.com, namun karena nilai email sudah diinisiasikan diatas dengan edolaku@gmail.com, maka yg akan tampil adalah edolaku@gmail.com, jika nilai email tidak diinisiasikan diatas, yang akan tampil adalah nilai default, yaitu edoooq@gmail.com
+        //Untuk objek juga dapat dipersingkat dengan metode seperti ini:
+        ({
             nama,
             umur,
             email
-        } = mhs; //untuk objek, gunakan propertinya
+        } = {
+            nama: "wapek",
+            umur: 30,
+            email: "edolaku @gmail.com"
+        })
         console.log(nama); //hasil "wapek"
         console.log(umur); //hasil 30
         console.log(email); //hasil "edolaku@gmail.com"
 
 
         const pgw = ["edo", "joko", "nurul", "wahyu"];
-        const [satu, , , empat] = pgw
+        const [satu, , , empat] =
+        pgw
         ; //ini agar joko dan nurul tidak di definisikan/diskip itemnya, sehingga joko dan nurul tidak dapat dipanggil sebagai variabel
         console.log(satu); //hasilnya "edo"
 
