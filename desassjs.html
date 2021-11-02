@@ -35,7 +35,17 @@
         //     email
         // } = mhs 
         // ; //untuk objek, gunakan propertinya, tidak bisa menggunakan nama sembarang, untuk variabel juga dapat di assign ke variabel yang baru, yaitu dengan cara:
-        // const{nama = n, umur = u. email = "edoooq@gmail.com"} = mhs; //jadi dengan cara ini, variabel dari nama berubah menjadi n, dan variabel umur berubah menjadi u, dan untuk variabel email mendapat nilai default yaitu edoooq@gmail.com, namun karena nilai email sudah diinisiasikan diatas dengan edolaku@gmail.com, maka yg akan tampil adalah edolaku@gmail.com, jika nilai email tidak diinisiasikan diatas, yang akan tampil adalah nilai default, yaitu edoooq@gmail.com
+        // const{nama : n, umur : u. email : u = "edoooq@gmail.com"} = mhs;
+        //jadi dengan cara diatas, variabel dari nama berubah menjadi n, variabel umur berubah menjadi u, variabel email berubah menjadi e, dan untuk variabel email mendapat nilai default yaitu edoooq@gmail.com, namun karena nilai email sudah diinisiasikan diatas dengan edolaku@gmail.com, maka yg akan tampil adalah edolaku@gmail.com, jika nilai email tidak diinisiasikan diatas, yang akan tampil adalah nilai default, yaitu edoooq@gmail.com
+        //Destructuring assignment untuk object dapat digunakan dengan rest parameter:
+        // const mhs = {
+        //     nama: "wapek",
+        //     umur: 30,
+        //     email: "edolaku@gmail.com"
+        // };
+        // const{nama, ...nilai} = mhs;
+        //console.log(nama); //hasil "wapek"
+        //console.log(nilai); //hasil objek umur dan email
         //Untuk objek juga dapat dipersingkat dengan metode seperti ini:
         ({
             nama,
