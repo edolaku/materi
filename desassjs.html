@@ -21,7 +21,7 @@
         console.log(eek); //hasil "tiga"
         console.log(oke); //hasil "satu"
         console.log(eko); //hasil "dua"
-
+        //////////////////////////////////////////
 
         //Destructuring assignment untuk object
         // const mhs = {
@@ -59,14 +59,14 @@
         console.log(nama); //hasil "wapek"
         console.log(umur); //hasil 30
         console.log(email); //hasil "edolaku@gmail.com"
-
+        //////////////////////////////////////////
 
         const pgw = ["edo", "joko", "nurul", "wahyu"];
         const [satu, , , empat] =
         pgw
         ; //ini agar joko dan nurul tidak di definisikan/diskip itemnya, sehingga joko dan nurul tidak dapat dipanggil sebagai variabel
         console.log(satu); //hasilnya "edo"
-
+        //////////////////////////////////////////
 
         //Destructuring assignment juga dapat digunakan untuk swap items. contoh:
         let i = 1;
@@ -74,7 +74,7 @@
         [i, y] = [y, i];
         console.log(y); //hasil 1
         console.log(i); //hasil 2
-
+        //////////////////////////////////////////
 
         //Destructuring assignment juga dapat untuk return value pada function. jadi function nya dapat mengembalikan array, dan array nya langsung ditangkap oleh sintax Destructuring ini. contoh:
         function rtrn() {
@@ -88,6 +88,27 @@
 
         console.log(p); //hasil 1, karena parameter p diisi oleh 1
         console.log(sisa); //hasil array 2, 3, 4, 5. 
+        //////////////////////////////////////////
+
+        //Mengambil field pada object, setelah dikirim sebagai parameter untuk function
+        const pegawai = {
+            umum: "wapek",
+            pbj: "wahyu",
+            ekonomi: "joko"
+        };
+        //untuk cara normal memanggil nilai dari properti diatas menggunakan function adalah dengan cara berikut:
+        // function getProp(pegawai) {
+        //     return pegawai.pbj;
+        // }
+        // console.log(getProp(pegawai)); //hasil wahyu, karena return adalah pegawai.pbj
+        //namun jika menggunakan destructuring assignment dapat menggunakan perintah berikut:
+        function getProp({
+            pbj
+        }) {
+            return pbj;
+        }
+        console.log(getProp(pegawai)); //hasil wahyu
+        //perintah tsb menggunakan destructuring assignment dengan pada function memanggil properti pbj, namun jika ingin memanggil properti yang lain, pada function jg harus dimasukkan propertinya terlebih dahulu dengan menggunakan "," misal: function getProp ({pbj, ekonomi}), sehingga nantinya ekonomi dapat dimasukkan ke dalam function getProp
     </script>
 </body>
 
