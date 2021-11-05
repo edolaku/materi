@@ -11,15 +11,60 @@
 <body>
 
     <script>
-        function kalkulasi(a, b) {
-            return [a + b, a - b, a * b, a / b];
-        }
-        const [tambah, kurang, kali, bagi] = kalkulasi(2,
-            3); //ini mendefinisikan dari array functionnya, tambah sebagai arrray[0], kurang sebagai arrayp[1] dst.
-        console.log(tambah); //hasil 5
-        console.log(kurang); //hasil -
-        console.log(kali); //hasil 6
-        console.log(bagi); //hasil 0.666
+        //membuat destructuring assignment dengan return array
+        // function kalkulasi(a, b) {
+        //     return [a + b, a - b, a * b, a / b];
+        // }
+        // const [tambah, kurang, kali, bagi] = kalkulasi(2,
+        //     3); //ini mendefinisikan dari array functionnya, tambah sebagai arrray[0], kurang sebagai arrayp[1] dst. Jika destructuring array menggunakan tanda []
+        // console.log(tambah); //hasil 5
+        // console.log(kurang); //hasil -
+        // console.log(kali); //hasil 6
+        // console.log(bagi); //hasil 0.666
+        ///////////////////////////////////////////////////////
+
+        //membuat destructuring assignment dengan return object
+        // function kalkulasi(a, b) {
+        //     return {
+        //         tambah: a + b,
+        //         kurang: a - b,
+        //         kali: a * b,
+        //         bagi: a / b
+        //     };
+        // }
+        // const {
+        //     kurang,
+        //     bagi,
+        //     kali,
+        //     tambah
+        // } = kalkulasi(2, 3); //Untuk destructuring objek, menggunakan tanda {}
+        // console.log(kurang); //hasil -1
+        // console.log(kali); //hasil 6
+        ///////////////////////////////////////////////////////
+
+        //membuat destructuring assignment dengan function untuk objek di dalam objek
+        const pgw = {
+            nama: "wapek",
+            umur: 30,
+            email: "edoooq@gmail.com",
+            nilai: {
+                kepribadian: 75,
+                kedisiplinan: 68,
+                kerapian: 80
+            }
+        };
+
+        function cetakPgw({
+            nama,
+            umur,
+            nilai: {
+                kepribadian,
+                kerapian
+            }
+        }) {
+            return `Halo, nama saya ${nama}, umur ${umur}, dan nilai kerapian adalah ${kerapian}`;
+        } //pecah objek dengan menggunakan tanda {}. Mengambil objek didalam objek, sehingga di dalam nilai dibuat lagi destructuring assignment
+        console.log(cetakPgw(pgw)); // hasil "Halo, nama saya wapek, umur 30, dan nilai kerapian adalah 80"
     </script>
 </body>
 
