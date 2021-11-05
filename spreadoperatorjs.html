@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator JS</title>
+</head>
+
+<body>
+
+    <script>
+        //Spread Operator => Memecah (expand/unpack) iterables menjadi single element
+        //objek yg iterable: string, array, arguments/nodelist, typedarray, map, set, user-defined iterables
+        const mhs = ["sandhika", "doddy", "erik"];
+        const pgw = ["wapek", "wahyu", "joko"];
+        console.log(mhs); //hasil sesuai, yaitu array
+        console.log(...mhs);
+        //hasil diatas memecah array yang ada didalamnya, karena menggunakan spread operator dengan tanda ...
+        const orang = [...mhs, "nurul", ...pgw];
+        //perintah diatas menggabungkan 2 array dengan spread operator, dan menambah 1 isi dari array ditengahnya dan menghaslkan array
+        console.log(orang);
+        ////////////////////////////////////////////////////////
+
+        //spread operator digunakan untuk meng-copy array:
+        // const mhs1 = mhs; //jika menggunakan ini, maka mhs1 adalah referensi dari mhs, atau sebaliknya. jadi, jika salah satu dari array tersebut berubah, yang lain akan mengikuti
+        const mhs1 = [...mhs];
+        //dengan spread operator seperti diatas, nilai mhs (array origin) tidak akan berubah jika nilai dari mhs1 diubah, jadi mhs1 hanya meng-copy dari array mhs saja
+        mhs1[0] = "fajar"; //perubahan nilai array tidak akan masuk ke dalam array mhs
+        console.log(mhs1); //hasil indeks ke-0 sudah berubah menjadi fajar
+        console.log(mhs); //hasil masih sesuai origin-nya
+    </script>
+</body>
+
+</html>
