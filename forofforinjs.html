@@ -9,13 +9,18 @@
 </head>
 
 <body>
+    <ul>
+        <li class="nama">edo</li>
+        <li class="nama">brian</li>
+        <li class="nama">dandi</li>
+    </ul>
 
     <script>
         // for..of -> looping yang dapat menelusuri objek2 yg iterable
         // objek yg iterable: string, array, arguments/nodelist, typedarray, map, set, user-defined iterables
 
         //cara penggunaan for..of utk array
-        const pgw = ["wapek", "joko", "wahyu"];
+        // const pgw = ["wapek", "joko", "wahyu"];
 
         // //menggunakan for biasa:
         // for (let i = 0; i < pgw.length; i++) {
@@ -31,19 +36,53 @@
         // } //tiap2 p kita representasikan sebagai array pgw
 
         //namun, pada for..of tidak dapat menangkap indeks dari array begitu saja. untuk mendapatkan indeks pada for..of untuk array, kita dapat menggunakan method entries, dan mengambilnya dengan destructuring assignment. contoh:
-        for (const [i, p] of pgw.entries()) {
-            console.log(`${p} adalah pegawai ke-${i + 1}`);
-        } //jika tanpa menggunakan destructuring assignment, method entries() akan menghasilkan ini: [0, 'wapek'] [1, 'joko'] [2, 'wahyu']. jadi kita dapat memasukkan hasil array dari method entries() tsb dengan menggunakan destructuring assignment const [i, p]
+        // for (const [i, p] of pgw.entries()) {
+        //     console.log(`${p} adalah pegawai ke-${i + 1}`);
+        // } //jika tanpa menggunakan destructuring assignment, method entries() akan menghasilkan ini: [0, 'wapek'] [1, 'joko'] [2, 'wahyu']. jadi kita dapat memasukkan hasil array dari method entries() tsb dengan menggunakan destructuring assignment const [i, p]
         ////////////////////////////////////////////////////////
 
         //cara penggunaan for..of utk string
-        const nama = "wapek";
-        for (const n of nama) {
-            console.log(n);
-        } //hasilnya akan melooping tiap2 karakter pada stringnya, yaitu: w a p e k. ini tidak bisa menggunakan for atau foreach, karena const nama bukan protoype array
+        // const nama = "wapek";
+        // for (const n of nama) {
+        //     console.log(n);
+        // } //hasilnya akan melooping tiap2 karakter pada stringnya, yaitu: w a p e k. ini tidak bisa menggunakan for atau foreach, karena const nama bukan protoype array
         ////////////////////////////////////////////////////////
 
         //cara penggunaan for..of utk nodelist
+        // const liNama = document.querySelectorAll(".nama");
+        // console.log(liNama); //hasil list yg bentuknya nodelist => edo, brian, dandi
+        // for (n of liNama) {
+        //     console.log(n.textContent);
+        // } //hasil => edo, brian, dandi
+        ////////////////////////////////////////////////////////
+
+        //cara penggunaan for..of utk argument
+        // function jumlahAngka() {
+        //     console.log(arguments); //jika dipanggil seperti ini, hasilnya berupa arguments(bukan array) 1, 2, 3, 4, 5
+        //     let jumlah = 0;
+        //     for (i of arguments) {
+        //         jumlah += i;
+        //     }
+        //     return console.log(jumlah);
+        //     //for..of memasukkan arguments ke dalam array jumlah, dan sesuai dengan perintah, menjumlahkan semua arguments tersebut
+        // }
+        // jumlahAngka(1, 2, 3, 4, 5);
+        ////////////////////////////////////////////////////////
+
+        //for..in => looping yang digunakan hanya untuk enumerable(properti pada objek). Contoh:
+        const pgw = {
+            nama: "wapek",
+            umur: 30,
+            email: "edoooq@gmail.com"
+        };
+        for (m in pgw) {
+            console.log(m);
+            //perintah diatas hanya akan mengambil perulangan properti(indeks) dari objeknya saja  (nama, umur, email)
+        }
+        for (m in pgw) {
+            console.log(pgw[m]);
+            //perintah diatas berarti console.log pgw indeks ke-m, perintah ini akan mengambil perulangan isi properti dari objeknya (wapek, 30, edoooq@gmail.com)
+        }
     </script>
 </body>
 
