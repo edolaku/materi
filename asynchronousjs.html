@@ -11,7 +11,27 @@
 <body>
 
     <script>
+        //Asynchronous javaScript => system yg membuat break down (memecah) projecyt yg besar menjadi tugas yg kecil2. Asynchrnous system berupa: callback, promise, ajax, async & await
+        //javaScript secara default menggunakan sychronous system, jadi dia akan mengurutkan perintah dari atas ke bawah, jika perintah dari atas belum selesai, maka perintah yg di bawahnya tidak akan dijalankan, bahkan jika perintah diatasnya berhenti, perintah di bawahnya pun semuanya berhenti. Dengan menggunakan asynchronous, maka semua perintah yg diinginkan berjalan secara asynchronous akan dijalankan bersamaan, tanpa menunggu perintah satu dan yg lain selesai
 
+        //Synchronous:
+        console.log(" I ");
+        console.log(" eat ");
+        console.log(" ice cream ");
+        console.log(" with a ");
+        console.log(" spoon ");
+
+        //Asynchronous:
+        console.log(" We ");
+        console.log(" use ");
+        setTimeout(() => {
+            console.log(" asynchronous ");
+        }, 1000);
+        //perintah di atas menggunakan asynchronous system, pada argument waktu timeout menggunakan satuan miliseconds (1/1000 detik). pada perintah ini hasil akan dikeluarkan setelah 1000 milisecond (1 detik), tidak peduli perintah diatasnya sudah selesai atau belum
+        console.log(" right ");
+        console.log(" now ");
+
+        //callback => function yang dikirimkan sebagai parameter pada function yg lain atau function yang dieksekusi setelah fungsi lain selesai dijalankan.
     </script>
 </body>
 
