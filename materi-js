@@ -1,2 +1,12 @@
 Parameter => variabel yang didefinisikan sebagai bagian dari fungsi
+
 arguments => nilai yg didefinisikan untuk menjalankan fungsi ketika fungsi tersebut dipanggil
+
+properti => properti merupakan atribut yang menempel, misal pada objek seperti ini:
+let person = {
+            nama: "wapek";
+        };
+        pada kode diatas, propertinya adalah 'nama'
+namun, ada juga properti yg sudah default ada dari javascriptnya. misal untuk array, dia punya instance property array.length.
+
+method => function. ada instance method yg sudah default pada javascript. misal array.push() dia merupakan instance method dari javascrip.

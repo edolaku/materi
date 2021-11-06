@@ -30,8 +30,19 @@
         //perintah di atas menggunakan asynchronous system, pada argument waktu timeout menggunakan satuan miliseconds (1/1000 detik). pada perintah ini hasil akan dikeluarkan setelah 1000 milisecond (1 detik), tidak peduli perintah diatasnya sudah selesai atau belum
         console.log(" right ");
         console.log(" now ");
+        //////////////////////////////////////////
 
-        //callback => function yang dikirimkan sebagai parameter pada function yg lain atau function yang dieksekusi setelah fungsi lain selesai dijalankan.
+        //callback => function yang dikirimkan sebagai parameter pada function yg lain atau function yang dieksekusi setelah fungsi lain selesai dijalankan. contoh dari callback:
+        function one(call_two) {
+            console.log("step 1 complete, please call step 2");
+            call_two();
+        }
+
+        function two() {
+            console.log("step 2");
+        }
+        one(
+        two); //fungsi ini memasukkan argumen "two" ke dalam parameter di function one(call_two), jadi dia memanggil function two() juga
     </script>
 </body>
 
