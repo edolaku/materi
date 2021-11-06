@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Parameter</title>
+</head>
+
+<body>
+
+    <script>
+        //Rest parameter => merepresentasikan argumen pada function dengan jumlah yang tidak terbatas menjadi sebuah array
+
+        //di dalam sebuah function sebenarnya sudah ada method arguments, namun jika method tsb dipanggil, maka argument tersebut berupa objek arguments (bukan array). untuk mengubahnya menjadi array, kita dapat menggunakan rest parameter seperti contoh berikut:
+
+        //memanggil method arguments:
+        function myFunc() {
+            return arguments;
+        }
+        console.log(myFunc(1, 2, 3));
+        ////////////////////////////////////////////////////////
+
+        //mengubah arguments menjadi array dengan cara biasa:
+        function myFunc1() {
+            return Array.from(arguments);
+        }
+        console.log(myFunc1(1, 2, 3));
+        //hasil dari function diatas mengubah argument menjadi array dengan tanpa rest parameter
+        ////////////////////////////////////////////////////////
+
+        //mengubah arguments menjadi array dengan spread operator:
+        function myFunc2() {
+            return [...arguments];
+        }
+        console.log(myFunc2(1, 2, 3));
+        ////////////////////////////////////////////////////////
+
+        //mengubah arguments menjadi array dengan rest parameter:
+        function myFunc3(...sisa) {
+            return sisa;
+        }
+        console.log(myFunc3(1, 2, 3));
+        ////////////////////////////////////////////////////////
+
+        //dengan rest parameter, kita juga dapat melakukan sisa dari argument yang tidak diinisiasi, seperti contoh berikut:
+        function myFunc4(a, b, ...sisa) {
+            console.log(a);
+            console.log(b);
+            console.log(sisa);
+        } // untuk ini, parameter a menginisiasikan argument dari angka 1, b menginisiasikan argument dari angka 2, dan ...sisa menginisiasikan argument dari sisa argument yang tidak diinisiasikan pada argument. dan hasil dari ...sisa berbentuk array
+        myFunc4(1, 2, 3, 4);
+        ////////////////////////////////////////////////////////
+
+        //dengan rest parameter, kita juga dapat melakukan filtering:
+        function filterBy(type, ...nilai) {
+            return nilai.filter(n => typeof n === type)
+        } //ini artinya filter pada array nilai, yang typenya sesuai dengan argument yang diinputkan, misal number, maka cari yang type datanya number, jika diinput string, maka cari yang type datanya string, dst
+        console.log(filterBy("number", 1, 3, "wapek", true, 5, "nurul", "wahyu"))
+    </script>
+</body>
+
+</html>
