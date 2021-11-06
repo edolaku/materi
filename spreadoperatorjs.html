@@ -10,6 +10,12 @@
 
 <body>
 
+    <ul>
+        <li>edo</li>
+        <li>brian</li>
+        <li>dandi</li>
+    </ul>
+
     <script>
         //Spread Operator => Memecah (expand/unpack) iterables menjadi single element
         //objek yg iterable: string, array, arguments/nodelist, typedarray, map, set, user-defined iterables
@@ -30,6 +36,26 @@
         mhs1[0] = "fajar"; //perubahan nilai array tidak akan masuk ke dalam array mhs
         console.log(mhs1); //hasil indeks ke-0 sudah berubah menjadi fajar
         console.log(mhs); //hasil masih sesuai origin-nya
+        ////////////////////////////////////////////////////////
+
+        const sblng = document.querySelectorAll("li");
+        console.log(sblng); //ini masih berbentuk nodeList (bukan array);
+
+        //memasukkan nodelist ke dalam array
+        const sblngArray = [];
+        for (let i = 0; i < sblng.length; i++) {
+            sblngArray.push(sblng[i].textContent);
+        }
+        console.log(sblngArray);
+
+        //memasukkan nodelist ke dalam array dengan map dan spread operator. karena map itu adalah prototype dari array, maka nodeList tidak dapat menggunakan method map, jadi kita akan copy dulu nodeList nya dengan menggunakan spread operator. contoh:
+        const sblngSpreadOp = [...sblng].map(s => s.textContent);
+        console.log(sblngSpreadOp);
+        //pada kode diatas spread operator (...) mengubah nodeList sblng menjadi array, sehingga dia memiliki prototype map
+        const sblngSpreadOp1 = [...sblng].map(function (s) {
+            return s.textContent
+        });
+        console.log(sblngSpreadOp1);
     </script>
 </body>
 
