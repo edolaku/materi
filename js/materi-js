@@ -10,5 +10,3 @@ let person = {
 namun, ada juga properti yg sudah default ada dari javascriptnya. misal untuk array, dia punya instance property array.length.
 
 method => function. ada instance method yg sudah default pada javascript. misal array.push() dia merupakan instance method dari javascrip.
-
-coba ubah
