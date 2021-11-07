@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Javascript</title>
+</head>
+
+<body>
+
+    <script>
+        // Membuat ice cream dengan metode callback, dengan content sbb:
+        // #1 place order -> 2 secs
+        // #2 cut the fruit -> 2 secs
+        // #3 add water and ice -> 1 secs
+        // #4 start the machine -> 1 secs
+        // #5 select container -> 2 secs
+        // #6 select topping -> 3 secs
+        // #7 serve ice cream -> 2 secs
+
+        let stocks = {
+            fruits: ["strawberry", "grape", "banana", "apple"],
+            liquid: ["water", "ice"],
+            holder: ["cone", "cup", "stick"],
+            topping: ["chocolate", "peanut"]
+        };
+
+        let order = (fruitName, callProduction) => {
+            setTimeout(() => {
+                // place order membutuhkan 2 secs
+                console.log(`${stocks.fruits[fruitName]} was selected`);
+                callProduction();
+            }, 2000);
+        };
+
+        let production = () => {
+            setTimeout(() => {
+                // mulai membuat ice cream langsung ketika order sudah diterima
+                console.log("production has started");
+                setTimeout(() => {
+                    // masukkan timeout 2 secs karena cut the fruit membutuhkan waktu 2 secs
+                    console.log("the fruit has been chopped");
+                    setTimeout(() => {
+                        // memasukkan water and ice membutuhkan waktu 1 sec
+                        console.log(
+                            `${stocks.liquid[0]} and ${stocks.liquid[1]} was added`
+                        );
+                        setTimeout(() => {
+                            // mulai menyalakan mesin, membutuhkan waktu 1 sec
+                            console.log("the machine has been started");
+                            setTimeout(() => {
+                                // menaruh ice cream ke container, membutuhkan waktu 2 secs
+                                console.log(
+                                    `ice cream was placed on ${stocks.holder[0]}`
+                                );
+                                setTimeout(() => {
+                                    // meletakkan topping, membutuhkan waktu 3 secs
+                                    console.log(
+                                        `${stocks.topping[0]} was added as toppings`
+                                    );
+                                    setTimeout(() => {
+                                        // menyajikan ice cream, membutuhkan waktu 2 secs
+                                        console.log(
+                                            `serve the ice cream`
+                                        );
+                                    }, 2000);
+                                }, 3000);
+                            }, 2000);
+                        }, 1000);
+                    }, 1000);
+                }, 2000);
+            }, 0000);
+        };
+
+        //ambil indeks array dari fruits, dan masukkan ke dalam function order dengan argumen function production
+        order(0, production);
+    </script>
+</body>
+
+</html>
