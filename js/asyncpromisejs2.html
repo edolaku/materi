@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Javascript</title>
+</head>
+
+<body>
+
+    <script>
+        // Promise => objek yang merepresentasikan keberhasilan/kegagalan sebuah event yang asynchronous di masa yang akan datang
+        // aksi => then, menjalankan resolve; catch, menjalankan reject
+        // promise biasanya digunakan ketika melakukan request ke API
+
+        let ditepati = true
+
+        const janji = new Promise((resolve, reject) => {
+            // beri kondisinya
+            if (ditepati) {
+                console.log("Janji ditepati");
+            } else {
+                console.log("Ingkar janji");
+            }
+        })
+
+        janji
+
+            // response disini adalah apapun yang dihasilkan dari kondisinya (promise diatas). artinya, ketika .then, ambil hasil yg dilakukan resolve, masukkan ke dalam response di .then . dan jika .catch, ambil hasil yg dilakukan reject, masukkan ke dalam response di .catch
+            // untuk fungsi dibawah tidak boleh ada semicolon (;)
+            // apapun kondisi yang akan dijalankan (resolve ataupun reject), .finally akan dijalankan dulu
+            // finally itu dijalankan setelah pending selesai, biasanya digunakan untuk mengeluarkan animasi loading, begitu .finally berjalan (pending selesai), matikan animasi loadingnya
+            .finally(() => console.log("selesai menunggu"))
+            .then(response => console.log(`OK, ${response}`))
+            .catch(response => console.log(`NOT OK, ${response}`))
+
+
+        const film = new Promise(resolve => {
+            setTimeout(() => {
+                resolve([{
+                    judul: "Avengers",
+                    sutradara: "wapek",
+                    tahun: 2015
+                }])
+            }, 500);
+        });
+
+        const cuaca = new Promise(resolve => {
+            setTimeout(() => {
+                resolve([{
+                    kota: "Kajen",
+                    temperatur: 30,
+                    kondisi: "cerah"
+                }])
+            }, 500);
+        });
+
+        // jalankan beberapa promise sekaligus, yang didalamnya menyimpan array-nya menggunakan tanda []
+        Promise.all([film, cuaca])
+            // bisa gunakan ini untuk menampilkan
+            // .then(response => console.log(response))
+
+            // atau bisa gunakan spread operator agar hasil terpisah
+            .then(response => {
+                // masukkan ke dalam spread operator
+                const [film, cuaca] = response;
+                // tampilkan hasilnya
+                console.log(film);
+                console.log(cuaca);
+            })
+    </script>
+</body>
+
+</html>

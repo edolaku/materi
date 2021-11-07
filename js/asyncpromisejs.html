@@ -11,6 +11,10 @@
 <body>
 
     <script>
+        // Promise => objek yang merepresentasikan keberhasilan/kegagalan sebuah event yang asynchronous di masa yang akan datang
+        // aksi => then, menjalankan resolve; catch, menjalankan reject
+        // promise biasanya digunakan ketika melakukan request ke API
+
         // Membuat ice cream dengan metode callback, dengan content sbb:
         // #1 place order -> 2 secs
         // #2 cut the fruit -> 2 secs
@@ -45,8 +49,9 @@
                 return console.log(`${stocks.fruits[2]}`);
             })
 
+            // pada then ini sama saja menulis order(2000, function () {return console.log(`${stocks.fruits[2]}`);}).then
             // diantara .then tidak boleh ada semicolon (;)
-            //Always return results, otherwise callbacks won't catch the result of a previous promise (with arrow functions () => x is short for () => { return x; })
+            // Always return results, otherwise callbacks won't catch the result of a previous promise (with arrow functions () => x is short for () => { return x; })
             .then(() => {
                 return order(0000, () => {
                     console.log("Production has started");
