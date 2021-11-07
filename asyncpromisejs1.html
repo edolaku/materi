@@ -27,66 +27,51 @@
             topping: ["chocolate", "peanut"]
         };
 
-        let isShopOpen = false;
+        let isShopOpen = true;
 
-        let order = (time, work) => {
+        let order = function (work) {
             return new Promise((resolve, reject) => {
                 if (isShopOpen) {
-                    setTimeout(() => {
-                        resolve(work())
-                    }, time);
+                    resolve(work());
                 } else {
                     reject(console.log("our shop is closed"));
                 }
             })
         }
 
-        order(2000, function () {
+
+        order(function () {
                 return console.log(`${stocks.fruits[2]}`);
             })
 
             // diantara .then tidak boleh ada semicolon (;)
             //Always return results, otherwise callbacks won't catch the result of a previous promise (with arrow functions () => x is short for () => { return x; })
             .then(() => {
-                return order(0000, () => {
-                    console.log("Production has started");
-                })
+                console.log("Production has started");
             })
 
             .then(() => {
-                return order(2000, () => {
-                    console.log("the fruit was chopped");
-                })
+                console.log("the fruit was chopped");
             })
 
             .then(() => {
-                return order(1000, () => {
-                    console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} was added`);
-                })
+                console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} was added`);
             })
 
             .then(() => {
-                return order(1000, () => {
-                    console.log("The machine has been started");
-                })
+                console.log("The machine has been started");
             })
 
             .then(() => {
-                return order(2000, () => {
-                    console.log(`Ice cream placed on ${stocks.holder[0]}`);
-                })
+                console.log(`Ice cream placed on ${stocks.holder[0]}`);
             })
 
             .then(() => {
-                return order(3000, () => {
-                    console.log(`${stocks.topping[0]} was selected as topping`);
-                })
+                console.log(`${stocks.topping[0]} was selected as topping`);
             })
 
             .then(() => {
-                return order(2000, () => {
-                    console.log("Serve the ice cream");
-                })
+                console.log("Serve the ice cream");
             })
 
             // .catch will only work when our promise is rejected. ketika shop tidak dapat melayani customer, maka fungsi .catch akan dijalankan
