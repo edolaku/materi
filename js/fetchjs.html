@@ -9,12 +9,13 @@
 </head>
 
 <body>
-    <img src="" id="gambar">
+    <img src="" id="gambar" width="480">
 
     <script>
         // fetch => sebuah API yg tugasnya utk mengambil data secara asynchronous (AJAX) sama seperti kita melakukan xml http request pada vanila javascript atau method ajax pada jquery
         // fetch merupakan fungsi pada javascript yg mengembalikan promise
         // hasil dari response, dapat dibentuk menjadi 3 jenis: text, blob(document, jpg misalnya), json (javascript object notation), formData, arrayBuffer
+        ///////////////////////////////////////////////////////
 
         // masukkan parameter berupa alamat url. ini karena alamatnya sama dengan folder, jadi hanya masukkan nama file-nya saja
         fetch("kabpek.png")
@@ -28,9 +29,17 @@
                 // dengan perintah dibawah, tidak akan berjalan karena data response yg berformat blob tersebut tidak berformat DOM element. jadi kita harus mengconvert menjadi dom element
                 // document.getElementById("gambar").src = response;
 
-                // convert menjadi dom element
-                document.getElementById("gambar").src = URL.createObjectURL(response);
-            });
+                // convert menjadi dom element dengan URL.createObjectURL()
+                document.getElementById("gambar").src = URL.createObjectURL(response)
+                // Namun, pada code diatas belum sempurna, karena:
+                // #1 kita belum meng-handle error, jadi kita tidak tau jika fetch-nya gagal
+                // #2 async/await => keyword ini dapat meng-handle promises dengan lebih readable dan elegant
+            })
+            // handle error, jika reject yg terjadi
+            .catch(error => {
+                console.log("error!")
+                console.log(error);
+            })
     </script>
 </body>
 
