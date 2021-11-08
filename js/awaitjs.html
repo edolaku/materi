@@ -21,14 +21,21 @@
 
 
         async function catchGambar() {
+            // await untuk mengambil dari function async
             const response = await fetch("kabpek.png");
             // convert ke blob;
             const blob = await response.blob();
-            document.getElementById("gambar").src = URL.createObjectURL(blob);
+            document.getElementById("gambaar").src = URL.createObjectURL(blob);
             // console.log("async oke")
         }
 
-        catchGambar();
+        catchGambar()
+            .then(response => {
+                console.log("BERHASIL!")
+            })
+            .catch(response => {
+                console.log("GAGAL!")
+            });
 
         //     .then(response => {
         //         console.log("Oke")
