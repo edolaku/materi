@@ -1,1 +1,7 @@
 dynamic website => isinya dapat berubah, karena terdapat konsep CRUD (create, read, update, delete)
+
+print_r => khusus untuk digunakan mencetak isi array
+
+variabel => digunakan untuk menampung sebuah nilai
+
+foreach untuk php => pengulangan khusus array
