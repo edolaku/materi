@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Javascript</title>
+</head>
+
+<body>
+    <img src="" id="gambar">
+
+    <script>
+        // fetch => sebuah API yg tugasnya utk mengambil data secara asynchronous (AJAX) sama seperti kita melakukan xml http request pada vanila javascript atau method ajax pada jquery
+        // fetch merupakan fungsi pada javascript yg mengembalikan promise
+        // hasil dari response, dapat dibentuk menjadi 3 jenis: text, blob(document, jpg misalnya), json (javascript object notation), formData, arrayBuffer
+
+        // masukkan parameter berupa alamat url. ini karena alamatnya sama dengan folder, jadi hanya masukkan nama file-nya saja
+        fetch("kabpek.png")
+            .then(response => {
+                console.log(response)
+                // convert ke blob, dan ini menyebabkan promise yg lain yg akan di .then lagi selanjutnya
+                return response.blob()
+            })
+            .then(response => {
+                console.log(response)
+                // dengan perintah dibawah, tidak akan berjalan karena data response yg berformat blob tersebut tidak berformat DOM element. jadi kita harus mengconvert menjadi dom element
+                // document.getElementById("gambar").src = response;
+
+                // convert menjadi dom element
+                document.getElementById("gambar").src = URL.createObjectURL(response);
+            });
+    </script>
+</body>
+
+</html>
