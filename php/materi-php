@@ -5,3 +5,5 @@ print_r => khusus untuk digunakan mencetak isi array
 variabel => digunakan untuk menampung sebuah nilai
 
 foreach untuk php => pengulangan khusus array
+
+echo (<?php echo) jg dapat diganti dg <?=
