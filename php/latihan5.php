@@ -26,7 +26,7 @@
     <!-- ARRAY PHP -->
     <h1>ARRAY PHP</h1>
     <!-- Array => variabel yg dapat memiliki banyak nilai -->
-
+    
     <?php 
         $bulan = ["januari", "pebruari", "maret"];
         echo $bulan[1];
