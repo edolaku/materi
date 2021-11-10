@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery Javascript</title>
+    <!-- ambil data jquery dari url -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Belajar jQuery!</h1>
+
+    <div id="box">Judul Box</div>
+    <div class="boxes">Box Pertama</div>
+    <div class="boxes">Box Kedua</div>
+    <div class="boxes">Box Ketiga</div>
+
+    <form class="satu">
+        <input type="text" id="inputText">
+        <input type="submit">
+    </form>
+    <form class="dua">
+        <input type="text" id="inputText">
+        <input type="submit">
+    </form>
+
+    <script>
+        // memastikan file sudah diload dg sempurna
+        $(document).ready(function () {
+
+            //----- Selection -----
+            // pada jquery ini dia tidak perlu seperti javascript vanilla dg keyword document.querySelector dll
+
+            // mengubah css dari h1 dengan warna blue
+            $("h1").css("color", "blue");
+            // mengubah css dari id box dengan warna green
+            $("#box").css("color", "green");
+            // mengubah css dari class boxes dengan warna salmon
+            $(".boxes").css("color", "salmon");
+            // mengubah css dari class boxes index pertama dengan warna aqua
+            $(".boxes:first").css("color", "aqua");
+            // mengubah css dari class boxes index pertama dengan warna aqua
+            $(".boxes:last").css("color", "pink");
+            // mengubah css dari class boxes index yg diinginkan dengan warna purple
+            $(".boxes:eq(1)").css("color", "purple");
+
+
+            //----- Event -----
+
+            // event klik ketika klik h1, dia berubah merjadi merah
+            $("h1").click(function () {
+                $("h1").css("color", "red");
+            });
+            // event mouseenter ketika kursor berada di atas element tsb, dia berubah merjadi yellow
+            $("h1").mouseenter(function () {
+                $("h1").css("color", "yellow");
+            });
+            // event mouseleave ketika kursor keluar dari element, dia berubah merjadi green
+            $("h1").mouseleave(function () {
+                $("h1").css("color", "green");
+            });
+
+            // menambahkan event ketika boxes diklik, maka dia akan berubah menjadi kuning, namun kita menggunakan keyword this, yg mana dia akan tau element mana yg di klik. jadi ketika kita klik class boxes pada indeks ke-0, maka hanya elemen itu saja yg akan berubah, dan this tersebut mengembbalikan ".boxes:eq(0)"
+            $(".boxes").click(function () {
+                $(this).css("color", "yellow");
+            });
+
+
+            //----- Get dan Set Nilai -----
+
+            $("form.satu").submit(function () {
+                // masukkan value dari id #inputText
+                alert($(".satu #inputText").val());
+            });
+
+            // .text gunanya ada 2: #1 jika argument dikosongkan dapat kita pakai untuk mengambil nilainya; #2 jika argument diisi misal .text("ganti text"), maka element yg ditempel .text tsb akah diganti dg "ganti text". namun, text tidak dapat digunakan untuk mengambil value dari inputan element.
+            // jadi .text ini gunanya untuk get dan set data
+            $("form.dua").submit(function () {
+                // ambil inputan dari user menggunakan method .val karena method .text tidak dapat digunakan untuk mengambil value input
+                let tulisan = $(".dua #inputText").val();
+                // masukkan value dari id #inputText
+                $("h1").text(tulisan);
+                // .html => digunakan untuk mengambil bersama tag-tag html yg ada di dalamnya
+
+                // gunakan preventDefault untuk form tidak berpindah ke halaman lain, jadi dia tidak mengembalikan sifat asli dari tag form yg berpindah ke halaman lain
+                event.preventDefault();
+            });
+
+            //----- Get dan Set Nilai -----
+
+            // append prepend|after before
+            // append akan membuat value dibawah element yg ditugaskan, maka dia akan menambah elemen yg diinginkan dibawahnya. pada kasus dibawah maka pada setiap class boxes akan dibuat <div>oke</div>
+            $(".boxes").append("<div>oke</div>");
+        });
+    </script>
+
+</body>
+
+</html>
