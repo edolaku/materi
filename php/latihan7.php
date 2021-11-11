@@ -25,7 +25,6 @@
 
     // perintah ini akan berisi array kosong jika dijalankan
     // namunhttp://localhost/materi/php/latihan7.php?nama=edho&jabatan=staf
-
     var_dump($_GET);
     ?>
 
