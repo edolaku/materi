@@ -9,3 +9,12 @@ foreach untuk php => pengulangan khusus array
 echo (<?php echo) jg dapat diganti dg <?=
 
 parameter => nilai yg dimasukkan ke dalam fungsi yg akan dibuat
+
+semua tipe superglobal ini adalah array associattive. array associattive tidak dapat dicetak begitu saja menggunakan echo, karena terdapat indeks didalamnya. untuk mengeceknya dapat menggunakan var_dump() atau print_r(). Superglobal:
+    #1 $_GET
+    #2 $_POST
+    #3 $_REQUEST
+    #4 $_SESSION
+    #5 $_COOKIE
+    #6 $_SERVER
+    #7 $_ENV

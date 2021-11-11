@@ -25,7 +25,7 @@
 
 <body>
     <!-- ARRAY MULTIDIMENSI PHP -->
-    <h1>ARRAY PHP</h1>
+    <h1>ASSOCIATIVE ARRAY PHP</h1>
     <!-- Array => variabel yg dapat memiliki banyak nilai -->
     <!-- Array multidimensi => Array di dalam array -->
 
