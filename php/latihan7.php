@@ -25,8 +25,38 @@
 
     // perintah ini akan berisi array kosong jika dijalankan
     // namunhttp://localhost/materi/php/latihan7.php?nama=edho&jabatan=staf
-    var_dump($_GET);
+    // var_dump($_GET);
+
+    $pegawai = [
+        [
+            "nama" => "Maskur, A.Md",
+            "nip" => "198001142011011006",
+            "jabatan" => "Bendahara Pengeluaran"
+        ],
+        [
+            "nama" => "Anton Sutriyono",
+            "nip" => "198009162005011011",
+            "jabatan" => "Bendahara Pengeluaran Pembantu"
+        ],
+        [
+            "nama" => "Anita Yuliatin",
+            "nip" => "198807112015022001",
+            "jabatan" => "Bendahara Pengeluaran Pembantu"
+        ]
+    ];
     ?>
+
+
+    <h2>Daftar Pegawai</h2>
+    <ul>
+        <?php
+        foreach ($pegawai as $peg) { ?>
+            <li>
+                <!-- mengirimkan data pd url dan akan ditangkap oleh $_GET pd latihan8.php -->
+                <a href="latihan8.php?nama=<?php echo $peg['nama']; ?>&nip=<?php echo $peg['nip']; ?>&jabatan=<?php echo $peg['jabatan']; ?>"> <?php echo $peg["nama"]; ?></a>
+            </li>
+        <?php } ?>
+    </ul>
 
 </body>
 
