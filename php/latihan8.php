@@ -1,3 +1,16 @@
+<?php
+// jika $_GET["nama"] $_GET["nip"] $_GET["jabatan"] belum dibuat, maka lemparkan halaman ke latihan7.php
+// isset adalah perintah apakah variabel sudah dibuat
+if (!isset($_GET["nama"]) || !isset($_GET["nip"]) || !isset($_GET["jabatan"])) {
+
+    // masukkan lokasi yg akan dilemparkan
+    header("Location:latihan7.php");
+
+    // jalankan exit agar fungsi dibawahnya tidak dijalankan
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +34,7 @@
             <li>Jabatan: <?php echo $_GET["jabatan"]; ?></li>
         </ul>
     </h3>
+    <p><a href="latihan7.php">kembali ke halaman awal</a></p>
     <?php
 
     ?>

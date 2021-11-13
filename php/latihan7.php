@@ -15,7 +15,7 @@
 
     <?php
     // semua tipe superglobal ini adalah array associattive. array associattive tidak dapat dicetak begitu saja menggunakan echo, karena terdapat indeks didalamnya. untuk mengeceknya dapat menggunakan var_dump() atau print_r(). Superglobal:
-    // #1 $_GET
+    // #1 $_GET => metode pengiriman data melalui URL, dan data tersebut ditangkap oleh superglobal $_GET
     // #2 $_POST
     // #3 $_REQUEST
     // #4 $_SESSION

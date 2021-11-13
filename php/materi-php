@@ -18,3 +18,6 @@ semua tipe superglobal ini adalah array associattive. array associattive tidak d
     #5 $_COOKIE
     #6 $_SERVER
     #7 $_ENV
+
+    $_GET => metode pengiriman data melalui URL, dan data yg dikirimkan akan terlihat pada URL-nya, dan data tersebut ditangkap oleh superglobal $_GET
+    $_POST => metode pengiriman hampir sama dengan get, namun prosesnya terjadi di belakang layar (tidak terlihat pada URL). ini biasanya untuk mengambil data profile atau password
